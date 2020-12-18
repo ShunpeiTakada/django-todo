@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'todo/css/modules/ress.css' %}">
+    <style>
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 90%;
+            height: 2000px;
+            margin: auto;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: bisque;
+            opacity: 0.7;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            margin: 20px;
+            background-color: lightskyblue;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: bisque;
+        }
+        .footer__inner {
+            height: 60px;
+            background-color: lightskyblue;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            padding-top: 100px;;
+            background-color: lightgreen;
+        }
+    </style>
+    {% block customcss %}
+    {% endblock customcss %}
+</head>
+<body>
+    <div class="grobal-container">
+        <header class="header">
+            <div class="header__inner">
+                <p>header</p>
+            </div>
+        </header>
+        <div class="container">
+            <main class="content-wrapper">
+                {% block content %}
+                {% endblock content %}
+            </main>
+        </div>
+        <footer class="footer">
+            <div class="footer__inner">
+                <p>footer</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

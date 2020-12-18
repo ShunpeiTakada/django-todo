@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="list-wrapper">
+    <p>todo一覧 (list view)</p>
+    <br>
+    <a href=""><button>新規登録 (addへ)</button></a>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>タイトル</th>
+            <th>更新日時</th>
+            <th>更新者</th>
+            <th></th>
+        </tr>
+        {% for item in object_list %}
+        <tr>
+            <td>{{ item.pk }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.updated_date }}</td>
+            <td>{{ item.author }}</td>
+            <td><button>編集 (editへ)</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>以下、繰り返しですべて表示</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+server = "python3 manage.py runserver"
+makem = "python3 manage.py makemigrations"
+migrate = "python3 manage.py migrate"

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+    .add-wrapper {
+        background-color: lightsalmon;
+    }
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="add-wrapper">
+    <p>新規登録 (add view)</p>
+    <form action="" method="POST">{% csrf_token %}
+        <label for="title">タイトル</label>
+        <input type="text" name="title" id="title">
+        <br>
+        <label for="content">内容</label>
+        <input type="text" name="content" id="content">
+        <br>
+        <button type="submit">登録</button>
+    </form>
+</div>
+{% endblock content %}

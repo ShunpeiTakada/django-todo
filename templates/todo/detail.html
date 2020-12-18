@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+    .add-wrapper {
+        background-color: lightsalmon;
+    }
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="add-wrapper">
+    <p>todo詳細 (detail view)</p>
+    <br>
+    <ul>
+        <li>タイトル：{{ object.title }}</li>
+        <li>内容：{{ object.content }}</li>
+        <li>更新日時：{{ object.updated_date }}</li>
+        <li>更新者：{{ object.author }}</li>
+    </ul>
+    <a href=""><button>編集</button></a>
+</div>
+{% endblock content %}
