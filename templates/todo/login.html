@@ -2,9 +2,20 @@
 
 {% block customcss %}
 <style>
+    .user-info {
+        display: none;
+    }
 </style>
 {% endblock customcss %}
 
 {% block content %}
+
 <h2>login view</h2>
+
+<div class="form-wrapper">
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">ログイン</button>
+    </form>
+</div>
 {% endblock content %}
