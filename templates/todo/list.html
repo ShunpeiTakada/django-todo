@@ -9,7 +9,7 @@
 <div class="list-wrapper">
     <p>todo一覧 (list view)</p>
     <br>
-    <a href=""><button>新規登録 (addへ)</button></a>
+    <a href="{% url 'add' %}"><button>新規登録 (addへ)</button></a>
     <table border="1">
         <tr>
             <th>id</th>
@@ -21,10 +21,10 @@
         {% for item in object_list %}
         <tr>
             <td>{{ item.pk }}</td>
-            <td>{{ item.title }}</td>
+            <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
             <td>{{ item.updated_date }}</td>
             <td>{{ item.author }}</td>
-            <td><button>編集 (editへ)</button></td>
+            <td><a href="{% url 'edit' item.pk %}"><button>編集 (editへ)</button></a></td>
         </tr>
         {% endfor %}
     </table>
