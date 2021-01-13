@@ -5,80 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'todo/css/modules/ress.css' %}">
-    <style>
-        /* orverride ress.css */
-        button, input, select, textarea {
-            background-color: #fff;
-            border-style: solid;
-        }
+    <link rel="stylesheet" href="{% static 'todo/css/vendors/ress.css' %}">
+    <link rel="stylesheet" href="{% static 'todo/css/base.css' %}">
 
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 90%;
-            height: 2000px;
-            margin: auto;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: bisque;
-            opacity: 0.7;
-        }
-
-        .header__inner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60px;
-            margin: 20px;
-            background-color: lightskyblue;
-        }
-
-        .header__logo {
-            margin: 0 auto 0 0;
-            padding: 20px;
-        }
-        
-        .user-info {
-            margin: 0 0 0 auto;
-            padding: 20px;
-        }
-
-        .user-name {
-            margin-right: 20px;
-        }
-
-        .footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100px;
-            background-color: bisque;
-        }
-
-        .footer__inner {
-            height: 60px;
-            background-color: lightskyblue;
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 600px;
-            padding-top: 100px;;
-            background-color: lightgreen;
-        }
-    </style>
     {% block customcss %}
     {% endblock customcss %}
 </head>
@@ -86,12 +15,12 @@
     <div class="grobal-container">
         <header class="header">
             <div class="header__inner">
-                <div class="header__logo">
-                    <p>header</p>
+                <div class="header__left">
+                    <h2><a href="{% url 'list' %}">To Do App</a></h2>
                 </div>
-                <nav class="user-info">
-                    <span class="user-name">ユーザー名：{{ user.get_username }}</span>
-                    <a href="{% url 'logout' %}"><button>ログアウト</button></a>
+                <nav class="header__right">
+                    <span class="username">ユーザー名：{{ user.get_username }}</span>
+                    <a href="{% url 'logout' %}" class="link-logout">ログアウト</a>
                 </nav>
             </div>
             {% if user.is_authenticated %}
@@ -103,9 +32,11 @@
                 {% endblock content %}
             </main>
         </div>
+        <div class="hypo"></div>
         <footer class="footer">
             <div class="footer__inner">
-                <p>footer</p>
+                <span class="footer__logo">To Do App</span>
+                <span>Created By Shunpei Takada</span>
             </div>
         </footer>
     </div>
