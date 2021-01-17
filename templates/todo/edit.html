@@ -2,14 +2,14 @@
 
 {% block customcss %}
 <style>
-    .edit-wrapper {
+    /* .edit-wrapper {
         background-color: lightsalmon;
     }
     .form-wrapper {
         width: 80%;
         margin: auto;
         background-color: lightskyblue;
-    }
+    } */
 </style>
 {% endblock customcss %}
 
@@ -18,19 +18,13 @@
     <p>todo詳細 (edit view)</p>
     <br>
     <form action="" method="POST" class="form-wrapper">{% csrf_token %}
-        <p>form</p>
-        <label for="title">タイトル</label>
-        <input type="text" name="title" id="title">
-        <br>
-        <label for="content">内容</label>
-        <input type="text" name="content" id="content">
-        <br>
-        <button type="submit">登録</button>
+        {{ form.as_p }}
+        <input type="submit" value="更新">
     </form>
     <br>
-    <ul>
-        <li>更新日時：{{ object.updated_date }}</li>
-        <li>更新者：{{ object.author }}</li>
-    </ul>
+    <span>更新日時：{{ object.updated_date }}</span>
+    <span>更新者：{{ object.author }}</span>
+    <br>
+    <a href="{% url 'list' %}">ホームに戻る</a>
 </div>
 {% endblock content %}
