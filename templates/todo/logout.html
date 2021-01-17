@@ -2,9 +2,14 @@
 
 {% block customcss %}
 <style>
+    .header__right {
+        display: none;
+    }
 </style>
 {% endblock customcss %}
 
 {% block content %}
 <h2>logout view</h2>
+<p>ログアウトしました。</p>
+<a href="{% url 'login' %}">ログインする</a>
 {% endblock content %}

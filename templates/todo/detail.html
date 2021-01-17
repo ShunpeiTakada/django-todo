@@ -3,21 +3,36 @@
 {% block customcss %}
 <style>
     .add-wrapper {
-        background-color: lightsalmon;
+    }
+    .content {
+        border: 1px solid black;
+    }
+    .date {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .author {
+        display: inline-block;
     }
 </style>
 {% endblock customcss %}
 
 {% block content %}
 <div class="add-wrapper">
-    <p>todo詳細 (detail view)</p>
+    <p>todo詳細</p>
     <br>
-    <ul>
-        <li>タイトル：{{ object.title }}</li>
-        <li>内容：{{ object.content }}</li>
-        <li>更新日時：{{ object.updated_date }}</li>
-        <li>更新者：{{ object.author }}</li>
+    <ul class="">
+        <li class="add__item">タイトル</li>
+        <li class="add__item">{{ object.title }}</li>
+        <br>
+        <li class="add__item">内容</li>
+        <li class="add__item content">{{ object.content }}</li>
+        <br>
+        <li class="add__item date">更新日時：{{ object.updated_date }}</li>
+        <li class="add__item author">更新者：{{ object.author }}</li>
     </ul>
-    <a href=""><button>編集</button></a>
+    <a class="" href="{% url 'edit' object.pk %}">
+        <span class="material-icons create-icon">create</span>
+    </a>
 </div>
 {% endblock content %}
