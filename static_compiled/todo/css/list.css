@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=list.css.map */
+.btn-add {
+  float: right;
+}
+
+.list-wrapper {
+  padding: 20px 0;
+}
+
+.list-table {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=list.css.map */

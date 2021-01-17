@@ -85,6 +85,8 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgreen;
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid black;
 }
 /*# sourceMappingURL=base.css.map */

@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block customcss %}
-<style>
-</style>
+<link rel="stylesheet" href="{% static 'todo/css/list.css' %}">
 {% endblock customcss %}
 
 {% block content %}
 <div class="list-wrapper">
-    <p>todo一覧 (list view)</p>
-    <br>
-    <a href="{% url 'add' %}"><button>新規登録 (addへ)</button></a>
-    <table border="1">
+    <span>todo一覧 (list view)</span>
+    <a class="btn btn-add" href="{% url 'add' %}">
+        <span class="material-icons">
+            add_circle
+        </span>
+    </a>
+    <table class="list list-table">
         <tr>
             <th>id</th>
             <th>タイトル</th>
@@ -24,10 +27,13 @@
             <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
             <td>{{ item.updated_date }}</td>
             <td>{{ item.author }}</td>
-            <td><a href="{% url 'edit' item.pk %}"><button>編集 (editへ)</button></a></td>
+            <td>
+                <a class="" href="{% url 'edit' item.pk %}">
+                    <span class="material-icons create-icon">create</span>
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </table>
-    <p>以下、繰り返しですべて表示</p>
 </div>
 {% endblock content %}

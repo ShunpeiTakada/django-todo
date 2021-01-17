@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "../../../static/todo/sass/common.scss"
+        "../../../static/todo/sass/logout.scss"
     ],
     "names": [],
-    "file": "common.css"
+    "file": "logout.css"
 }

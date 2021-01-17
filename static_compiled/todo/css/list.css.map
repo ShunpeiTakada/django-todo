@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,KAAK;CACf;;AAED,AAAA,aAAa,CAAC;EACV,OAAO,EAAE,MAAM;CAClB;;AAED,AAAA,WAAW,CAAC;EACR,MAAM,EAAE,eAAe;EACvB,MAAM,EAAE,MAAM;CACjB",
     "sources": [
         "../../../static/todo/sass/list.scss"
     ],

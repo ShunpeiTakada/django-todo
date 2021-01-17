@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "../../../static/todo/sass/common.scss"
+        "../../../static/todo/sass/detail.scss"
     ],
     "names": [],
-    "file": "common.css"
+    "file": "detail.css"
 }
