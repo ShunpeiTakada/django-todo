@@ -15,10 +15,6 @@ $color-border: black;
     }
 }
 
-.list-wrapper {
-    padding: 20px 0;
-}
-
 .list-table {
     margin: 0 auto;
     width: 100%;
@@ -26,6 +22,7 @@ $color-border: black;
 
 .list-headline {
     display: inline-block;
+    line-height: 40px;
     margin: 20px;
 }
 

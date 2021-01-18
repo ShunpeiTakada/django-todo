@@ -80,6 +80,7 @@ $color-hover: lightgrey;
   align-items: center;
   width: 100%;
   height: 100px;
+  margin-top: 20px;
   background: linear-gradient(to top, dodgerblue, deepskyblue);
 
   &__inner {
@@ -112,8 +113,8 @@ $color-hover: lightgrey;
   align-items: center;
   width: 800px;
   margin: 0 auto;
-  background-color: azure;
+  padding: 20px;
   border: 1px solid deepskyblue;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
