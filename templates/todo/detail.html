@@ -2,10 +2,8 @@
 
 {% block customcss %}
 <style>
-    .add-wrapper {
-    }
-    .content {
-        border: 1px solid black;
+    .detail-headline {
+        margin: 20px;
     }
     .date {
         display: inline-block;
@@ -14,25 +12,44 @@
     .author {
         display: inline-block;
     }
+    .link-edit {
+        display: block;
+        text-align: center;
+        margin: 20px;
+        color: black;
+    }
+    .link-edit:hover {
+        color: lightgray;
+    }
+
+    .link-list {
+        display: block;
+        text-align: center;
+        margin: 20px;
+        color: black;
+    }
+    .link-list:hover {
+        color: lightgrey;
+    }
 </style>
 {% endblock customcss %}
 
 {% block content %}
-<div class="add-wrapper">
-    <p>todo詳細</p>
+<div class="detail-wrapper">
+    <h3 class="detail-headline">todo詳細</h3>
     <br>
     <ul class="">
-        <li class="add__item">タイトル</li>
+        <li class="add__item">タイトル：</li>
         <li class="add__item">{{ object.title }}</li>
         <br>
-        <li class="add__item">内容</li>
+        <li class="add__item">内容：</li>
         <li class="add__item content">{{ object.content }}</li>
         <br>
         <li class="add__item date">更新日時：{{ object.updated_date }}</li>
         <li class="add__item author">更新者：{{ object.author }}</li>
     </ul>
-    <a class="" href="{% url 'edit' object.pk %}">
-        <span class="material-icons create-icon">create</span>
-    </a>
+    <a class="link-edit" href="{% url 'edit' object.pk %}"><button>編集</button></a>
+    <br>
+    <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>
 {% endblock content %}

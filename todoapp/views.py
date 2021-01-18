@@ -15,6 +15,9 @@ class TodoList(LoginRequiredMixin, ListView):
 class TodoLogin(LoginView):
     template_name = 'login.html'
     form = LoginForm()
+    # is_valid = form.is_valid()
+    # if not is_valid:
+    #     return render(request, 'login.html', {'form':form})
     
 class TodoLogout(LogoutView):
     template_name = 'logout.html'
