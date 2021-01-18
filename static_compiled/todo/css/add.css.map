@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../../static/todo/sass/add.scss"
-    ],
-    "names": [],
-    "file": "add.css"
-}

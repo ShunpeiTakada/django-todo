@@ -1,5 +1,15 @@
 .btn-add {
   float: right;
+  margin: 20px;
+}
+
+.add-icon {
+  color: royalblue;
+  font-size: 40px;
+}
+
+.add-icon:hover {
+  color: lightgrey;
 }
 
 .list-wrapper {
@@ -7,7 +17,44 @@
 }
 
 .list-table {
-  border: 1px solid black;
   margin: 0 auto;
+  width: 100%;
+}
+
+.list-headline {
+  display: inline-block;
+  margin: 20px;
+}
+
+.list {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.list-th {
+  border-bottom: 2px solid black;
+}
+
+.list-td {
+  border-bottom: 1px solid black;
+}
+
+.link-detail {
+  color: black;
+}
+
+.link-detail:hover {
+  color: lightgrey;
+}
+
+.create-icon {
+  color: royalblue;
+}
+
+.create-icon:hover {
+  color: lightgrey;
 }
 /*# sourceMappingURL=list.css.map */

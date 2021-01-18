@@ -1,5 +1,18 @@
+$color-icon: royalblue;
+$color-hover: lightgrey;
+$color-border: black;
+
 .btn-add {
     float: right;
+    margin: 20px;
+}
+
+.add-icon {
+    color: $color-icon;
+    font-size: 40px;
+    &:hover {
+        color: $color-hover;
+    }
 }
 
 .list-wrapper {
@@ -7,10 +20,41 @@
 }
 
 .list-table {
-    border: 1px solid black;
     margin: 0 auto;
+    width: 100%;
+}
+
+.list-headline {
+    display: inline-block;
+    margin: 20px;
+}
+
+.list {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.list-th {
+    border-bottom: 2px solid $color-border;
+}
+
+.list-td {
+    border-bottom: 1px solid $color-border
+}
+
+.link-detail {
+    color: black;
+    &:hover {
+        color: $color-hover;
+    }
 }
 
 .create-icon {
-    // color: white;
+    color: $color-icon;
+    &:hover {
+        color: $color-hover;
+    }
 }

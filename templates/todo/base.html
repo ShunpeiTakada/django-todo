@@ -17,11 +17,11 @@
         <header class="header">
             <div class="header__inner">
                 <div class="header__left">
-                    <a class="logo" href="{% url 'list' %}">To Do App</a>
+                    <a class="logo" href="{% url 'list' %}">Todo管理アプリ</a>
                 </div>
                 <nav class="header__right">
                     <span class="username">ユーザー名：{{ user.get_username }}</span>
-                    <a href="{% url 'logout' %}" class="link-logout">ログアウト</a>
+                    <a class="link-logout" href="{% url 'logout' %}">ログアウト</a>
                 </nav>
             </div>
             {% if user.is_authenticated %}
@@ -33,11 +33,10 @@
                 {% endblock content %}
             </main>
         </div>
-        <div class="hypo"></div>
         <footer class="footer">
             <div class="footer__inner">
-                <span class="logo footer__logo">To Do App</span>
-                <span class="">Created By Shunpei Takada</span>
+                <span class="logo footer__logo">Todo管理アプリ</span>
+                <span class="footer__copylight">Created By Shunpei Takada</span>
             </div>
         </footer>
     </div>

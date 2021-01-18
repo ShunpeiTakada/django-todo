@@ -7,28 +7,26 @@
 
 {% block content %}
 <div class="list-wrapper">
-    <span>todo一覧 (list view)</span>
+    <h3 class="list-headline">todo一覧</h3>
     <a class="btn btn-add" href="{% url 'add' %}">
-        <span class="material-icons">
-            add_circle
-        </span>
+        <span class="material-icons add-icon">add</span>
     </a>
     <table class="list list-table">
-        <tr>
-            <th>id</th>
-            <th>タイトル</th>
-            <th>更新日時</th>
-            <th>更新者</th>
-            <th></th>
+        <tr class="list">
+            <th class="list list-th">id</th>
+            <th class="list list-th">タイトル</th>
+            <th class="list list-th">更新日時</th>
+            <th class="list list-th">更新者</th>
+            <th class="list list-th"></th>
         </tr>
         {% for item in object_list %}
-        <tr>
-            <td>{{ item.pk }}</td>
-            <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
-            <td>{{ item.updated_date }}</td>
-            <td>{{ item.author }}</td>
-            <td>
-                <a class="" href="{% url 'edit' item.pk %}">
+        <tr class="list">
+            <td class="list list-td">{{ item.pk }}</td>
+            <td class="list list-td"><a class="link-detail" href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
+            <td class="list list-td">{{ item.updated_date }}</td>
+            <td class="list list-td">{{ item.author }}</td>
+            <td class="list list-td">
+                <a href="{% url 'edit' item.pk %}">
                     <span class="material-icons create-icon">create</span>
                 </a>
             </td>
