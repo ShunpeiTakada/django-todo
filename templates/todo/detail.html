@@ -5,13 +5,14 @@
     .detail-headline {
         margin: 20px;
     }
-    .date {
+    .detail-date {
         display: inline-block;
         margin-right: 20px;
     }
-    .author {
+    .detail-author {
         display: inline-block;
     }
+    
     .link-edit {
         display: block;
         text-align: center;
@@ -38,15 +39,15 @@
 <div class="detail-wrapper">
     <h3 class="detail-headline">todo詳細</h3>
     <br>
-    <ul class="">
-        <li class="add__item">タイトル：</li>
-        <li class="add__item">{{ object.title }}</li>
+    <ul>
+        <li>タイトル：</li>
+        <li>{{ object.title }}</li>
         <br>
-        <li class="add__item">内容：</li>
-        <li class="add__item content">{{ object.content }}</li>
+        <li>内容：</li>
+        <li>{{ object.content }}</li>
         <br>
-        <li class="add__item date">更新日時：{{ object.updated_date }}</li>
-        <li class="add__item author">更新者：{{ object.author }}</li>
+        <li class="detail-date">更新日時：{{ object.updated_date }}</li>
+        <li class="detail-author">更新者：{{ object.author }}</li>
     </ul>
     <a class="link-edit" href="{% url 'edit' object.pk %}"><button>編集</button></a>
     <br>

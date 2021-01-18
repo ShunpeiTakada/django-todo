@@ -18,6 +18,9 @@ class TodoLogin(LoginView):
     # is_valid = form.is_valid()
     # if not is_valid:
     #     return render(request, 'login.html', {'form':form})
+
+# class TodoLogin(AuthLoginView):
+#     template_name = 'login.html'
     
 class TodoLogout(LogoutView):
     template_name = 'logout.html'

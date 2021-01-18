@@ -5,11 +5,23 @@
     .header__right {
         display: none;
     }
+
+    .logout-headline {
+        margin-top: 20px;
+    }
+
+    .link-login {
+        margin: 20px;
+        border-bottom: 1px solid black;
+        color: black;
+    }
+    .link-login:hover {
+        color: lightgray;
+    }
 </style>
 {% endblock customcss %}
 
 {% block content %}
-<h2>logout view</h2>
-<p>ログアウトしました。</p>
-<a href="{% url 'login' %}">ログインする</a>
+<p class="logout-headline">ログアウトしました。</p>
+<a class="link-login" href="{% url 'list' %}">ログインする</a>
 {% endblock content %}

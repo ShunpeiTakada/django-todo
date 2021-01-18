@@ -1,5 +1,6 @@
 $color-icon: royalblue;
 $color-hover: lightgrey;
+$color-border: black;
 
 .btn-add {
     float: right;
@@ -8,7 +9,7 @@ $color-hover: lightgrey;
 
 .add-icon {
     color: $color-icon;
-    font-size: 32px;
+    font-size: 40px;
     &:hover {
         color: $color-hover;
     }
@@ -34,15 +35,14 @@ $color-hover: lightgrey;
     margin: 0 auto;
     border-collapse: separate;
     border-spacing: 0;
-
 }
 
 .list-th {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $color-border;
 }
 
 .list-td {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $color-border
 }
 
 .link-detail {

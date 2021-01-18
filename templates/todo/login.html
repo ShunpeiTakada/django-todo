@@ -5,17 +5,29 @@
     .header__right {
         display: none;
     }
+
+    .login-headline {
+        margin: 20px;
+    }
+
+    .login-btn {
+        display: block;
+        margin: 20px auto;
+    }
+    .login-btn:hover {
+        color: lightgray;
+    }
 </style>
 {% endblock customcss %}
 
 {% block content %}
 
-<h2>login view</h2>
+<h3 class="login-headline">Login</h3>
 
-<div class="form-wrapper">
+<div class="login-wrapper">
     <form action="" method="POST">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">ログイン</button>
+        <button class="login-btn" type="submit">ログイン</button>
     </form>
 </div>
 {% endblock content %}

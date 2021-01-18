@@ -9,9 +9,7 @@
 <div class="list-wrapper">
     <h3 class="list-headline">todo一覧</h3>
     <a class="btn btn-add" href="{% url 'add' %}">
-        <span class="material-icons add-icon">
-            add_circle
-        </span>
+        <span class="material-icons add-icon">add</span>
     </a>
     <table class="list list-table">
         <tr class="list">
@@ -28,7 +26,7 @@
             <td class="list list-td">{{ item.updated_date }}</td>
             <td class="list list-td">{{ item.author }}</td>
             <td class="list list-td">
-                <a class="" href="{% url 'edit' item.pk %}">
+                <a href="{% url 'edit' item.pk %}">
                     <span class="material-icons create-icon">create</span>
                 </a>
             </td>
