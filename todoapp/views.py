@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from .models import TodoModel
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
@@ -9,12 +9,12 @@ from .forms import LoginForm
 
 # Create your views here.
 class TodoList(LoginRequiredMixin, ListView):
-    template_name = 'list.html'
     model = TodoModel
+    template_name = 'list.html'
 
 class TodoLogin(LoginView):
-    template_name = 'login.html'
     form = LoginForm()
+    template_name = 'login.html'
     # is_valid = form.is_valid()
     # if not is_valid:
     #     return render(request, 'login.html', {'form':form})
@@ -27,17 +27,22 @@ class TodoLogout(LogoutView):
 
 
 class TodoCreate(LoginRequiredMixin, CreateView):
-    template_name = 'add.html'
     model = TodoModel
+    template_name = 'add.html'
     fields = ['title', 'content', 'author']
     success_url = reverse_lazy('list')
 
 class TodoDetail(LoginRequiredMixin, DetailView):
-    template_name = 'detail.html'
     model = TodoModel
+    template_name = 'detail.html'
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
-    template_name = 'edit.html'
     model = TodoModel
+    template_name = 'edit.html'
     fields = ['title', 'content']
+    success_url = reverse_lazy('list')
+
+class TodoDelete(LoginRequiredMixin, DeleteView): 
+    model = TodoModel
+    template_name = 'delete.html'
     success_url = reverse_lazy('list')
