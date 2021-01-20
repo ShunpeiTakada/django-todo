@@ -9,8 +9,8 @@
         margin-right: 20px;
     }
     .edit-btn {
-        display: block;
-        margin: 20px auto;
+        display: inline-block;
+        /* margin: 20px auto; */
         padding: 8px 16px;
     }
     .edit-btn:hover {
@@ -39,8 +39,12 @@
         <br>
         <span class="edit-date">更新日時：{{ object.updated_date }}</span>
         <span class="edit-author">更新者：{{ object.author }}</span>
+        <br>
         <input class="edit-btn" type="submit" value="更新">
     </form>
+    {% if user.is_superuser %}
+    <a href="{% url 'delete' object.pk %}"><button>削除</button></a>
+    {% endif %}
     <br>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>

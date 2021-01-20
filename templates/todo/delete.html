@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="delete-wrapper">
+    <h3 class="delete-headline">削除</h3>
+    <form method="POST">{% csrf_token %}
+      <p>本当に削除しますか{{ object }}？</p>
+      <input type="submit" value="Confilm">
+    </form>
+    <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
+</div>
+{% endblock content %}
