@@ -12,6 +12,7 @@ class TodoList(LoginRequiredMixin, ListView):
     model = TodoModel
     template_name = 'list.html'
 
+
 class TodoLogin(LoginView):
     form = LoginForm()
     template_name = 'login.html'
@@ -39,7 +40,7 @@ class TodoDetail(LoginRequiredMixin, DetailView):
 class TodoUpdate(LoginRequiredMixin, UpdateView):
     model = TodoModel
     template_name = 'edit.html'
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'is_done']
     success_url = reverse_lazy('list')
 
 class TodoDelete(LoginRequiredMixin, DeleteView): 

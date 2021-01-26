@@ -3,14 +3,15 @@
 {% block customcss %}
 <style>
     .edit-headline {
+        text-align: center;
         margin: 20px;
     }
     .edit-date {
         margin-right: 20px;
     }
     .edit-btn {
-        display: inline-block;
-        /* margin: 20px auto; */
+        display: block;
+        margin: 40px auto;
         padding: 8px 16px;
     }
     .edit-btn:hover {
@@ -27,6 +28,16 @@
     .link-list:hover {
         color: lightgrey;
     }
+
+    .link-delete {
+        text-decoration: none;
+    }
+    .btn-delete {
+        display: block;
+        margin: 0 auto;
+        background-color: tomato;
+        color: #fff;
+    }
 </style>
 {% endblock customcss %}
 
@@ -35,15 +46,21 @@
     <h3 class="edit-headline">todo編集</h3>
     <br>
     <form action="" method="POST" class="form-wrapper">{% csrf_token %}
-        {{ form.as_p }}
+        <p>タイトル</p>
+        <p>{{ form.title }}</p>
+        <br>
+        <p>内容</p>
+        <p>{{ form.content }}</p>
+        <br>
+        <p>完了{{ form.is_done }}</p>
         <br>
         <span class="edit-date">更新日時：{{ object.updated_date }}</span>
         <span class="edit-author">更新者：{{ object.author }}</span>
         <br>
-        <input class="edit-btn" type="submit" value="更新">
+        <button class="edit-btn" type="submit">更新</button>
     </form>
     {% if user.is_superuser %}
-    <a href="{% url 'delete' object.pk %}"><button>削除</button></a>
+    <a class="link-delete" href="{% url 'delete' object.pk %}"><button class="btn btn-delete">削除</button></a>
     {% endif %}
     <br>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>

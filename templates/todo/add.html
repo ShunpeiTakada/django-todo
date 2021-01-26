@@ -4,11 +4,12 @@
 <style>
     .add-headline {
         margin: 20px;
+        text-align: center;
     }
 
     .add-btn {
         display: block;
-        margin: 20px auto;
+        margin: 40px auto;
         padding: 8px 16px;  
     }
     .add-btn:hover {
@@ -31,8 +32,15 @@
 <div class="add-wrapper">
     <h3 class="add-headline">新規登録</h3>
     <form action="" method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <input class="add-btn" type="submit" value="登録">
+        <p>タイトル</p>
+        <p>{{ form.title }}</p>
+        <br>
+        <p>内容</p>
+        <p>{{ form.content }}</p>
+        <br>
+        <p>ユーザー名</p>
+        <p>{{ form.author }}</p>
+        <button class="add-btn" type="submit">登録</button>
     </form>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>
