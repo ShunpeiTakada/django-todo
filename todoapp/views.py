@@ -33,6 +33,7 @@ class TodoLogin(LoginView):
 
 # class TodoLogin(AuthLoginView):
 #     template_name = 'login.html'
+
     
 class TodoLogout(LogoutView):
     template_name = 'logout.html'
