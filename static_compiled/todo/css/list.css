@@ -1,29 +1,34 @@
-.btn-add {
+.list-wrapper {
+  padding: 20px 0;
+}
+
+.list-top {
+  text-align: center;
+}
+
+.list-top .list-headline {
+  display: inline-block;
+  margin: 20px 20px 20px 100px;
+  line-height: 40px;
+}
+
+.list-top .btn-add {
   float: right;
   margin: 20px;
 }
 
-.add-icon {
+.list-top .add-icon {
   color: royalblue;
   font-size: 40px;
 }
 
-.add-icon:hover {
+.list-top .add-icon:hover {
   color: lightgrey;
-}
-
-.list-wrapper {
-  padding: 20px 0;
 }
 
 .list-table {
   margin: 0 auto;
   width: 100%;
-}
-
-.list-headline {
-  display: inline-block;
-  margin: 20px;
 }
 
 .list {

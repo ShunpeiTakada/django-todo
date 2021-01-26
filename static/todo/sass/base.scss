@@ -1,6 +1,7 @@
 // override ress.css
 button, input, select, textarea {
-  border-style: solid;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 // end override ress.css
 
@@ -11,11 +12,16 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 6px 12px;
+  border-bottom: 3px solid black;
+  &:active {
+    transform: translateY(4px);
+    border-bottom: none;
+  }
 }
 // end add to ress.css
 
@@ -30,6 +36,7 @@ $color-hover: lightgrey;
   color: $color-white;
   font-weight: bold;
   font-size: 24px;
+  text-decoration: none;
 }
 
 .header {
@@ -67,6 +74,7 @@ $color-hover: lightgrey;
         color: $color-white;
           font-size: 16px;
           font-weight: bold;
+          text-decoration: none;
           &:hover {
               color: $color-hover;
           }
@@ -102,7 +110,7 @@ $color-hover: lightgrey;
 .container {
   min-height: 90vh;
   margin: 0 20px 0 20px;
-  padding-top: 120px;
+  padding-top: 160px;
 }
 
 .content-wrapper {
@@ -112,8 +120,7 @@ $color-hover: lightgrey;
   align-items: center;
   width: 800px;
   margin: 0 auto;
-  background-color: azure;
   border: 1px solid deepskyblue;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
