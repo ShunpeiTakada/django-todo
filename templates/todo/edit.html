@@ -2,27 +2,26 @@
 
 {% block customcss %}
 <style>
+    .edit-wrapper {
+        padding: 40px;
+    }
+
     .edit-headline {
         text-align: center;
-        margin: 20px;
     }
+
     .edit-date {
         margin-right: 20px;
     }
-    .edit-btn {
+
+    .btn-edit {
         display: block;
         margin: 40px auto;
-        padding: 8px 16px;
     }
-    .edit-btn:hover {
-        color: lightgray;
-    }
-
 
     .link-list {
         display: block;
         text-align: center;
-        margin: 20px;
         color: black;
     }
     .link-list:hover {
@@ -57,7 +56,7 @@
         <span class="edit-date">更新日時：{{ object.updated_date }}</span>
         <span class="edit-author">更新者：{{ object.author }}</span>
         <br>
-        <button class="edit-btn" type="submit">更新</button>
+        <button class="btn-edit" type="submit">更新</button>
     </form>
     {% if user.is_superuser %}
     <a class="link-delete" href="{% url 'delete' object.pk %}"><button class="btn btn-delete">削除</button></a>

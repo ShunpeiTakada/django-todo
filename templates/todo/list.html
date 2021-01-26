@@ -13,6 +13,12 @@
             <span class="material-icons add-icon">add</span>
         </a>
     </div>
+    <form class="query-form" action="" method="get">
+        <input name="query" value="{{ request.GET.query }}" type="text" placeholder="タイトルまたは作者名を入力">
+        <button class="btn query-btn" type="submit">
+            <span class="material-icons">search</span>
+        </button>
+    </form>
     <table class="list list-table">
         <tr class="list">
             <th class="list list-th">id</th>

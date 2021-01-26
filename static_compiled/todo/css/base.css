@@ -8,8 +8,12 @@ ul {
 }
 
 button {
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-bottom: 3px solid black;
+}
+
+button:hover {
+  color: lightgrey;
 }
 
 button:active {
@@ -106,7 +110,7 @@ button:active {
   align-items: center;
   width: 800px;
   margin: 0 auto;
-  border: 1px solid deepskyblue;
+  border: 2px solid royalblue;
   border-radius: 10px;
 }
 /*# sourceMappingURL=base.css.map */

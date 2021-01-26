@@ -1,3 +1,8 @@
+// 変数を定義
+$color-white: #fff;
+$color-hover: lightgrey;
+// end 変数を定義
+
 // override ress.css
 button, input, select, textarea {
   border: 1px solid black;
@@ -11,26 +16,19 @@ ul {
   list-style: none;
 }
 
-a {
-  // text-decoration: none;
-}
-
 button {
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-bottom: 3px solid black;
+  
+  &:hover {
+    color: $color-hover;
+  }
   &:active {
     transform: translateY(4px);
     border-bottom: none;
   }
 }
 // end add to ress.css
-
-
-// 変数を定義
-$color-white: #fff;
-$color-hover: lightgrey;
-// end 変数を定義
-
 
 .logo {
   color: $color-white;
@@ -120,7 +118,7 @@ $color-hover: lightgrey;
   align-items: center;
   width: 800px;
   margin: 0 auto;
-  border: 1px solid deepskyblue;
+  border: 2px solid royalblue;
   border-radius: 10px;
 }
 

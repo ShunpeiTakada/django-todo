@@ -1,28 +1,49 @@
+// 変数を定義
 $color-icon: royalblue;
 $color-hover: lightgrey;
 $color-border: black;
+// end 変数を定義
 
 .list-wrapper {
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 .list-top {
     text-align: center;
+    margin-bottom: 20px;
 
     & .list-headline {
         display: inline-block;
-        margin: 20px 20px 20px 100px; //ボタン分 (80px)、左のmarginを追加
+        margin-left: 60px; //"btn-add"分 (60px)、左のmarginを追加
         line-height: 40px;
     }
     
     & .btn-add {
         float: right;
-        margin: 20px;
+        margin-right: 20px;
     }
     
     & .add-icon {
         color: $color-icon;
         font-size: 40px;
+        
+        &:hover {
+            color: $color-hover;
+        }
+    }
+}
+
+.query-form {
+    display: flex;
+    justify-content: center;
+    margin-left: 40px; //"btn-add"分 + 微調整
+
+    & .query-btn {
+        height: 26px;
+        margin-left: 10px;
+        padding: 0;
+        border: none;
+
         &:hover {
             color: $color-hover;
         }
