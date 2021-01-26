@@ -2,13 +2,19 @@
 
 {% block customcss %}
 <style>
-    .detail-headline {
-        margin: 20px;
+    .detail-wrapper {
+        padding: 40px;
     }
+
+    .detail-headline {
+        text-align: center;
+    }
+
     .detail-date {
         display: inline-block;
         margin-right: 20px;
     }
+
     .detail-author {
         display: inline-block;
     }
@@ -16,11 +22,8 @@
     .link-edit {
         display: block;
         text-align: center;
-        margin: 20px;
+        margin: 40px 0;
         color: black;
-    }
-    .link-edit:hover {
-        color: lightgray;
     }
 
     .link-list {
@@ -46,11 +49,17 @@
         <li>内容：</li>
         <li>{{ object.content }}</li>
         <br>
+        <li>進捗：</li>
+        {% if is_done == True %}
+        <li>完了</li>
+        {% else %}
+        <li>未完了</li>
+        {% endif %}
+        <br>
         <li class="detail-date">更新日時：{{ object.updated_date }}</li>
         <li class="detail-author">更新者：{{ object.author }}</li>
     </ul>
     <a class="link-edit" href="{% url 'edit' object.pk %}"><button>編集</button></a>
-    <br>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>
 {% endblock content %}

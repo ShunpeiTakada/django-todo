@@ -1,26 +1,53 @@
-.btn-add {
-  float: right;
-  margin: 20px;
+.list-wrapper {
+  padding: 40px 0;
 }
 
-.add-icon {
+.list-top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.list-top .list-headline {
+  display: inline-block;
+  margin-left: 60px;
+  line-height: 40px;
+}
+
+.list-top .btn-add {
+  float: right;
+  margin-right: 20px;
+}
+
+.list-top .add-icon {
   color: royalblue;
   font-size: 40px;
 }
 
-.add-icon:hover {
+.list-top .add-icon:hover {
+  color: lightgrey;
+}
+
+
+.query-form {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.query-form .query-btn {
+  height: 26px;
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+}
+
+.query-form .query-btn:hover {
   color: lightgrey;
 }
 
 .list-table {
   margin: 0 auto;
   width: 100%;
-}
-
-.list-headline {
-  display: inline-block;
-  line-height: 40px;
-  margin: 20px;
 }
 
 .list {

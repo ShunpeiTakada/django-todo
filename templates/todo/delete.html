@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+	.delete-wrapper {
+		padding: 40px;
+	}
+	.delete-btn {
+		display: block;
+        margin: 40px auto;
+        background-color: tomato;
+        color: #fff;
+	}
+
+	.link-list {
+		text-align: center;
+		display: block;
+	}
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="delete-wrapper">
+    <form method="POST">{% csrf_token %}
+      	<p>「{{ object.title }}」</p>
+      	<br>
+      	<p>を本当に削除しますか？</p>
+      	<button class="btn delete-btn" type="submit" value="Confilm">削除</button>
+    </form>
+    <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
+</div>
+{% endblock content %}

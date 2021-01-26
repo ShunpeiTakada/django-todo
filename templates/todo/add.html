@@ -2,23 +2,23 @@
 
 {% block customcss %}
 <style>
-    .add-headline {
-        margin: 20px;
+    .add-wrapper {
+        padding: 40px 0;
     }
 
-    .add-btn {
-        display: block;
-        margin: 20px auto;
-        padding: 8px 16px;  
+    .add-headline {
+        margin-bottom: 20px;
+        text-align: center;
     }
-    .add-btn:hover {
-        color: lightgray;
+
+    .btn-add {
+        display: block;
+        margin: 40px auto;
     }
 
     .link-list {
         display: block;
         text-align: center;
-        margin: 20px;
         color: black;
     }
     .link-list:hover {
@@ -31,8 +31,15 @@
 <div class="add-wrapper">
     <h3 class="add-headline">新規登録</h3>
     <form action="" method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <input class="add-btn" type="submit" value="登録">
+        <p>タイトル</p>
+        <p>{{ form.title }}</p>
+        <br>
+        <p>内容</p>
+        <p>{{ form.content }}</p>
+        <br>
+        <p>ユーザー名</p>
+        <p>{{ form.author }}</p>
+        <button class="btn-add" type="submit">登録</button>
     </form>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>

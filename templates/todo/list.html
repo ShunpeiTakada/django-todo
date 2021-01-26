@@ -7,31 +7,48 @@
 
 {% block content %}
 <div class="list-wrapper">
-    <h3 class="list-headline">todo一覧</h3>
-    <a class="btn btn-add" href="{% url 'add' %}">
-        <span class="material-icons add-icon">add</span>
-    </a>
+    <div class="list-top">
+        <h3 class="list-headline">todo一覧</h3>
+        <a class="btn btn-add" href="{% url 'add' %}">
+            <span class="material-icons add-icon">add</span>
+        </a>
+    </div>
+    <form class="query-form" action="" method="get">
+        <input name="query" value="{{ request.GET.query }}" type="text" placeholder="タイトルまたは作者名を入力">
+        <button class="btn query-btn" type="submit">
+            <span class="material-icons">search</span>
+        </button>
+    </form>
     <table class="list list-table">
         <tr class="list">
             <th class="list list-th">id</th>
             <th class="list list-th">タイトル</th>
             <th class="list list-th">更新日時</th>
             <th class="list list-th">更新者</th>
+            <th class="list list-th">進捗</th>
             <th class="list list-th"></th>
         </tr>
         {% for item in object_list %}
-        <tr class="list">
-            <td class="list list-td">{{ item.pk }}</td>
-            <td class="list list-td"><a class="link-detail" href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
-            <td class="list list-td">{{ item.updated_date }}</td>
-            <td class="list list-td">{{ item.author }}</td>
-            <td class="list list-td">
-                <a href="{% url 'edit' item.pk %}">
-                    <span class="material-icons create-icon">create</span>
-                </a>
-            </td>
-        </tr>
+            {% if item.is_done == False %}
+            <tr class="list">
+                <td class="list list-td">{{ item.pk }}</td>
+                <td class="list list-td"><a class="link-detail" href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
+                <td class="list list-td">{{ item.updated_date }}</td>
+                <td class="list list-td">{{ item.author }}</td>
+                {% if is_done == True %}
+                <td class="list list-td">完了</td>
+                {% else %}
+                <td class="list list-td">未完了</td>
+                {% endif %}
+                <td class="list list-td">
+                    <a href="{% url 'edit' item.pk %}">
+                        <span class="material-icons create-icon">create</span>
+                    </a>
+                </td>
+            </tr>
+            {% endif %}
         {% endfor %}
     </table>
+
 </div>
 {% endblock content %}
