@@ -6,11 +6,22 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django import forms
 from .forms import LoginForm
+from django.db.models import Q
 
 # Create your views here.
 class TodoList(LoginRequiredMixin, ListView):
     model = TodoModel
     template_name = 'list.html'
+    
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = TodoModel.objects.filter(
+                Q(title__icontains=q_word) | Q(author__icontains=q_word)
+            )
+        else:
+            object_list = TodoModel.objects.all()
+        return object_list
 
 
 class TodoLogin(LoginView):

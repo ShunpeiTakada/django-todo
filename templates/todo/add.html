@@ -2,24 +2,23 @@
 
 {% block customcss %}
 <style>
+    .add-wrapper {
+        padding: 40px 0;
+    }
+
     .add-headline {
-        margin: 20px;
+        margin-bottom: 20px;
         text-align: center;
     }
 
-    .add-btn {
+    .btn-add {
         display: block;
         margin: 40px auto;
-        padding: 8px 16px;  
-    }
-    .add-btn:hover {
-        color: lightgray;
     }
 
     .link-list {
         display: block;
         text-align: center;
-        margin: 20px;
         color: black;
     }
     .link-list:hover {
@@ -40,7 +39,7 @@
         <br>
         <p>ユーザー名</p>
         <p>{{ form.author }}</p>
-        <button class="add-btn" type="submit">登録</button>
+        <button class="btn-add" type="submit">登録</button>
     </form>
     <a class="link-list" href="{% url 'list' %}">ホームに戻る</a>
 </div>

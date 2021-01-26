@@ -1,20 +1,21 @@
 .list-wrapper {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .list-top {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .list-top .list-headline {
   display: inline-block;
-  margin: 20px 20px 20px 100px;
+  margin-left: 60px;
   line-height: 40px;
 }
 
 .list-top .btn-add {
   float: right;
-  margin: 20px;
+  margin-right: 20px;
 }
 
 .list-top .add-icon {
@@ -23,6 +24,23 @@
 }
 
 .list-top .add-icon:hover {
+  color: lightgrey;
+}
+
+.query-form {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.query-form .query-btn {
+  height: 26px;
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+}
+
+.query-form .query-btn:hover {
   color: lightgrey;
 }
 
